@@ -1,0 +1,47 @@
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+ 
+ }
+
+ .navbar {
+  padding-top: 35px;
+  background-color: #8aab37;
+ }
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin-right: 60rem;
+}
+
+.nav-list-item {
+  margin: auto 15px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header {
+  background-color: beige;
+}
+
+.main {
+  background-color: white;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  background-color: #00302a;
+  color: white;
+  text-align: center;
+}
