@@ -12,32 +12,49 @@ const linkStyle = {
 
 export default function Navbar() {
   return (
-       <div className="navbar">
-        <Box sx={{ flexGrow: 1 }}>
-          <AppBar position="static" style={{ backgroundColor: "#f4f4ef" }}>
-            <Toolbar>
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{ flexGrow: 1 }}
-                style={{ color: "#0f0f0e" }}
-              ></Typography>
-              <ul className="nav-list">
-                <li className="nav-list-item">
-                  <Link to="/" style={linkStyle}>
-                    Home
-                  </Link>
-                </li>
-                <li className="nav-list-item">
-                  <Link to="/login" style={linkStyle}>
-                    Login
-                  </Link>
-                </li>
-              </ul>
-            </Toolbar>
-          </AppBar>
-        </Box>
-        </div>
-   
+    <div className="navbar">
+      <p className="navbar-p">
+        "In every walk with nature one receives far more than he needs." - John
+        Muir
+      </p>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar
+          position="static"
+          style={{ backgroundColor: "#f4f4ef", height: "4.5rem" }}
+        >
+          <Toolbar>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ flexGrow: 1 }}
+              style={{ color: "#0f0f0e" }}
+            ></Typography>
+            <ul className="nav-list">
+              <li className="nav-list-item">
+                <Link to="/" style={linkStyle}>
+                  HOME
+                </Link>
+              </li>
+              <li className="nav-list-item">
+                <Link to="/login" style={linkStyle}>
+                  GO OUTSIDE
+                </Link>
+              </li>
+              <li className="nav-list-item">
+                <Link to="/login" style={linkStyle}>
+                  GET INVOLVED
+                </Link>
+              </li>
+
+              <li className="nav-list-item">
+                <Link to="/login" style={linkStyle}>
+                  LOGIN
+                </Link>
+              </li>
+            </ul>
+          </Toolbar>
+        </AppBar>
+      </Box>
+    </div>
   );
 }
