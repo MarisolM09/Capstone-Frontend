@@ -8,9 +8,6 @@ import Button from '@mui/material/Button';
 export default function Login() {
   return (
     <div className="container">
-    <header className="header">
-  
-    </header>
     <div className="main">
     <form>
       <Box

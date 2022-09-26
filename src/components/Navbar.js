@@ -36,19 +36,28 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-list-item">
-                <Link to="/login" style={linkStyle}>
-                  GO OUTSIDE
-                </Link>
-              </li>
-              <li className="nav-list-item">
-                <Link to="/login" style={linkStyle}>
+                <Link to="/getinvolved" style={linkStyle}>
                   GET INVOLVED
                 </Link>
               </li>
-
+              <li className="nav-list-item">
+                <Link to="/safety" style={linkStyle}>
+                  SAFETY
+                </Link>
+              </li>
               <li className="nav-list-item">
                 <Link to="/login" style={linkStyle}>
                   LOGIN
+                </Link>
+              </li>
+              <li className="nav-list-item">
+                <Link to="/dashboard" style={linkStyle}>
+                  DASHBOARD
+                </Link>
+              </li>
+              <li className="nav-list-item">
+                <Link to="/login" style={linkStyle}>
+                  LOGOUT
                 </Link>
               </li>
             </ul>
