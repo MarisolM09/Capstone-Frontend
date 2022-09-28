@@ -1,15 +1,19 @@
 import Navbar from "./components/Navbar";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./Router";
-import './App.css';
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-      <Navbar  />
-      <Router />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Navbar />
+          <Router />
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }

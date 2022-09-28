@@ -141,12 +141,17 @@ form {
   text-align: center;
   flex-direction: column;
   background-color: #f4f4ef;
- 
   padding: 30px;
 }
 
 .login-btn {
   width: 100px;
   padding-left: 20px;
+}
+
+.Hike-listings {
+  padding-left: 720px;
+  width: 900px;
+  margin: 15rem 0;
   
 }
