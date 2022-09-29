@@ -2,9 +2,9 @@ import React from 'react'
 
 const TotalHikes = (props) => {
     return (
-        <div style={{ textAlign: 'center' }}>
+        <div className="total-hikes" style={{ textAlign: 'center' }}>
             
-            <h1>{props.hikes.length}/52 Hikes</h1>
+            <h1>{props.hikes.length} / 52 Hikes</h1>
         </div>
     )
 }

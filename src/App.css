@@ -152,6 +152,23 @@ form {
 .Hike-listings {
   padding-left: 720px;
   width: 900px;
-  margin: 15rem 0;
+  margin: 3rem 0;
   
+}
+
+.total-hikes {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #8aab37;
+  width: 200px;
+  margin-top: 3rem;
+}
+
+.add-hikes {
+  width: 200px;
+  height: 100px;
+}
+
+.Dashboard {
+  display: grid;
+  grid-template-columns: 40% 60%;
 }
