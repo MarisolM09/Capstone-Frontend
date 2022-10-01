@@ -161,6 +161,7 @@ form {
   background-color: #8aab37;
   width: 200px;
   margin-top: 3rem;
+  margin-left: 4rem;
 }
 
 .add-hikes {
@@ -172,3 +173,5 @@ form {
   display: grid;
   grid-template-columns: 40% 60%;
 }
+
+

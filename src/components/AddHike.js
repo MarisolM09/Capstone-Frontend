@@ -8,11 +8,10 @@ export default function AddHike(props) {
   const handleAdd = () => {
     props.addHike(hike);
     setHike({
-      name: "",
+      hike_name: "",
       location: "",
-      length: "",
-      elevation: "",
-      rating: "",
+      hike_length: "",
+      elevation_gain: "",
     });
   };
 
@@ -31,11 +30,11 @@ export default function AddHike(props) {
             required
             fullWidth
             margin="normal"
-            name="name"
+            name="hike_name"
             label="Hike Name"
             type="text"
             variant="standard"
-            value={hike.name}
+            value={hike.hike_name}
             onChange={handleChange}
           />
           <TextField
@@ -53,36 +52,24 @@ export default function AddHike(props) {
             required
             fullWidth
             margin="normal"
-            name="length"
+            name="hike_length"
             label="Length"
             type="text"
             variant="standard"
-            value={hike.length}
+            value={hike.hike_length}
             onChange={handleChange}
           />
           <TextField
             required
             fullWidth
             margin="normal"
-            name="elevation"
+            name="elevation_gain"
             label="Elevation Gain"
             type="text"
             variant="standard"
-            value={hike.elevation}
+            value={hike.elevation_gain}
             onChange={handleChange}
           />
-          <TextField
-            required
-            fullWidth
-            margin="normal"
-            name="rating"
-            label="Rating"
-            type="text"
-            variant="standard"
-            value={hike.rating}
-            onChange={handleChange}
-          />
-
           <Button
             // type="submit"
             className="login-button"

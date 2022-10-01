@@ -10,7 +10,6 @@ import Grid from "@mui/material/Grid";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 export default function Dashboard(props) {
-  
   const handleClick = (index) => {
     props.removeHike(index);
   };
@@ -28,7 +27,6 @@ export default function Dashboard(props) {
               <TableCell align="right">Location</TableCell>
               <TableCell align="left">Length</TableCell>
               <TableCell align="right">Elevation Gain</TableCell>
-              <TableCell align="right">Rating</TableCell>
               <TableCell align="right"></TableCell>
             </TableRow>
           </TableHead>
@@ -39,11 +37,10 @@ export default function Dashboard(props) {
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row"></TableCell>
-                <TableCell align="left">{row.name}</TableCell>
+                <TableCell align="left">{row.hike_name}</TableCell>
                 <TableCell align="right">{row.location}</TableCell>
-                <TableCell align="left">{row.length}</TableCell>
-                <TableCell align="right">{row.elevation}</TableCell>
-                <TableCell align="right">{row.rating}</TableCell>
+                <TableCell align="left">{row.hike_length}</TableCell>
+                <TableCell align="right">{row.elevation_gain}</TableCell>
 
                 <TableCell align="right">
                   <Grid
@@ -51,7 +48,7 @@ export default function Dashboard(props) {
                     item
                     xs={8}
                   >
-                    <DeleteForeverIcon onClick={() => handleClick(index)}/>
+                    <DeleteForeverIcon onClick={() => handleClick(index)} />
                   </Grid>
                 </TableCell>
               </TableRow>
