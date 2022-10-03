@@ -9,6 +9,7 @@ export default function Login() {
     first_name: "",
     last_name: "",
     email: "",
+    password: "",
   });
   const handleChange = (e) => {
     setHiker({ ...hiker, [e.target.name]: e.target.value });
@@ -17,7 +18,7 @@ export default function Login() {
   const handleSignup = async (e) => {
     e.preventDefault();
     return await axios
-      .post("http://localhost:5000/hikers", hiker)
+      .post("http://localhost:5000/auth/signup", hiker)
       .catch((err) => console.error(err));
   };
 
@@ -63,6 +64,15 @@ export default function Login() {
               value={hiker.email}
               onChange={handleChange}
             />
+              <TextField
+              id="outlined-basic"
+              label="Password"
+              variant="outlined"
+              style={textField}
+              name="password"
+              value={hiker.password}
+              onChange={handleChange}
+            />
 
             <Button
               type="submit"
@@ -81,7 +91,7 @@ export default function Login() {
 
             <TextField
               id="outlined-basic"
-              label="Username"
+              label="Email"
               variant="outlined"
               style={textField}
             />
