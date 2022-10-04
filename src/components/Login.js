@@ -18,7 +18,7 @@ export default function Login() {
   const handleSignup = async (e) => {
     e.preventDefault();
     return await axios
-      .post("http://localhost:5000/auth/signup", hiker)
+      .post("https://capstone-backend-sigma.vercel.app/auth/signup", hiker)
       .catch((err) => console.error(err));
   };
 
@@ -28,7 +28,7 @@ export default function Login() {
   };
 
   return (
-    <div className="container">
+    <div className="login-container">
       <div className="main-login">
         <div className="create-acc">
           <p className="acc-p">Please create an account</p>
@@ -79,7 +79,6 @@ export default function Login() {
               variant="contained"
               className="login-btn"
               sx={{ color: "white", backgroundColor: "#e9a82c" }}
-              // onClick={handleSignup}
             >
               Sign-up
             </Button>
