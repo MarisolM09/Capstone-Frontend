@@ -4,6 +4,8 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import cookie from "cookie";
 
 const linkStyle = {
   textDecoration: "none",
@@ -11,6 +13,8 @@ const linkStyle = {
 };
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
   return (
     <div className="navbar">
       <p className="navbar-p">
@@ -55,7 +59,14 @@ export default function Navbar() {
                   DASHBOARD
                 </Link>
               </li>
-              <li className="nav-list-item">
+              <li className="nav-list-item"
+                onClick={() => {
+                  document.cookie = cookie.serialize("loggedIn", null, {
+                    maxAge: 0,
+                  });
+                  navigate("/");
+                }}
+              >
                 <Link to="/login" style={linkStyle}>
                   LOGOUT
                 </Link>

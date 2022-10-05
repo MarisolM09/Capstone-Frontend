@@ -1,10 +1,14 @@
 import * as React from "react";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
 export default function Login() {
+  let navigate = useNavigate();
+
+  // set state and handles for SignUp()
   const [hiker, setHiker] = useState({
     first_name: "",
     last_name: "",
@@ -20,6 +24,39 @@ export default function Login() {
     return await axios
       .post("https://capstone-backend-sigma.vercel.app/auth/signup", hiker)
       .catch((err) => console.error(err));
+  };
+
+  // set state and handles for Login()
+  const [login, setLogin] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // set cookie here
+    document.cookie = "loggedIn=true;Max-Age=60*1000"
+
+    navigate("/dashboard");
+    // console.log("login");
+    // return await axios
+    //   .post("https://capstone-backend-sigma.vercel.app/auth/login", login)
+    //   .catch((err) => console.error(err));
+  } 
+ 
+
+
+
+  //  let cookies = cookie.parse(document.cookie);
+
+  const handleLogin = (e) => {
+    const { name, value } = e.target;
+    setLogin((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
   };
 
   const textField = {
@@ -64,7 +101,7 @@ export default function Login() {
               value={hiker.email}
               onChange={handleChange}
             />
-              <TextField
+            <TextField
               id="outlined-basic"
               label="Password"
               variant="outlined"
@@ -85,7 +122,7 @@ export default function Login() {
           </form>
         </div>
         <div className="login-form">
-          <form>
+          <form onSubmit={handleSubmit}>
             <p className="p-login">Please Login</p>
 
             <TextField
@@ -93,6 +130,9 @@ export default function Login() {
               label="Email"
               variant="outlined"
               style={textField}
+              name="email"
+              value={login.email}
+              onChange={handleLogin}
             />
             <TextField
               id="outlined-basic"
@@ -100,9 +140,13 @@ export default function Login() {
               type="password"
               variant="outlined"
               style={textField}
+              name="password"
+              value={login.password}
+              onChange={handleLogin}
             />
 
             <Button
+              type="submit"
               variant="contained"
               className="login-btn"
               sx={{ color: "white", backgroundColor: "#e9a82c" }}
@@ -115,4 +159,4 @@ export default function Login() {
       <footer class="footer"></footer>
     </div>
   );
-}
+  }
